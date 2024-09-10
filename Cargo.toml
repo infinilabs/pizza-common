@@ -1,0 +1,22 @@
+[package]
+name = "pizza-common"
+version = "0.1.0"
+authors = ["INFINI Labs <hello@infini.ltd>"]
+edition = "2021"
+license = "MIT"
+
+[dependencies]
+uuid = { version = "1.8.0", default-features = false, features = ["serde", "v4"] }
+bytes = { version = "1.6.0",default-features = false }
+camino = { version = "1.1.6", features = ["serde1"] ,default-features = false }
+
+rand = { version = "0.8", default-features = false, features = ["rand_chacha"] }
+getrandom = { version = "0.2.15", features = ["js"] }
+rand_core = "0.6.4"
+rand_chacha = "0.3.1"
+
+serde = { version = "1.0.197", features = ["derive"] ,default-features = false}
+serde_json = { version = "1.0.115",default-features = false,features = ["alloc"] }
+serde_with = { version = "3.7.0",default-features = false }
+
+hashbrown = { version = "0.14",default-features = false }
