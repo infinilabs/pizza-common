@@ -14,4 +14,5 @@
 extern crate alloc;
 #[cfg(test)]
 extern crate std; // use the standard library for tests
+pub mod arena;
 pub mod utils;
