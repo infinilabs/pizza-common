@@ -125,9 +125,9 @@ where
 
         // Ensure the chunk_index and element_index are within bounds
         if let Some(chunk) = chunks.get(chunk_index) {
-            if let Some(item) = chunk.get(element_index) {
+            if chunk.get(element_index).is_some() {
                 // Return a Ref to the item, borrowing the entire chunk immutably
-                Some(core::cell::Ref::map(chunks, |c| {
+                Some(core::cell::Ref::map(chunks, move |c| {
                     &c[chunk_index][element_index]
                 }))
             } else {
@@ -571,10 +571,10 @@ mod tests {
         let a: String = "Hello, World!".into();
 
         // Test alloc function
-        let mut elem_ref = arena.alloc(a.clone()).expect("Allocation failed");
+        let elem_ref = arena.alloc(a.clone()).expect("Allocation failed");
         assert_eq!(elem_ref, &"Hello, World!");
 
-        let mut b = "Hello, again!".into();
+        let b = "Hello, again!".into();
         // Test advanced_alloc function to get an index
         let (chunk_index, id, elem_ref1) =
             arena.advanced_alloc(b).expect("Advanced allocation failed");
