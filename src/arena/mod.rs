@@ -239,10 +239,7 @@ impl<T> Arena<T> {
     }
 }
 
-// use crate::store::persist::PersistStore;
-// use crate::store::persist::RecoverableStore;
 use serde::de::MapAccess;
-use serde::de::SeqAccess;
 use serde::de::Visitor;
 use serde::de::{self};
 use serde::ser::SerializeStruct;
@@ -415,11 +412,7 @@ impl<'de, T: Deserialize<'de>> Deserialize<'de> for Arena<T> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use core::ops::Range;
-    use std::prelude::v1::ToString;
     use std::println;
-    use std::sync::Mutex;
-    use std::sync::Once;
 
     #[test]
     fn test_arena_allocation_and_snapshots() {
