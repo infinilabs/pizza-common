@@ -1,0 +1,15 @@
+/target
+.idea
+.DS_Store
+Cargo.lock
+*.qf
+*.fst
+*.log
+.vscode
+_dist
+*.iml
+
+# Env files
+.direnv
+.envrc
+.env
