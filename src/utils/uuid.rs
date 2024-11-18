@@ -217,13 +217,13 @@ impl Default for Uuid {
     }
 }
 
-/// Required by [`openraft::testing::Suite`].
+/// Required by `openraft::testing::Suite`.
 ///
 /// > Additional traits are required to be implemented by the store builder for testing:
 /// >
 /// > `C::NodeId` requires `From<u64>` to build a node id.
 ///
-/// > link: https://github.com/datafuselabs/openraft/blob/6197f054a5e0e8df89a1666df96cb0f738bb807d/openraft/src/testing/log/suite.rs#L95
+/// > link: <https://github.com/datafuselabs/openraft/blob/6197f054a5e0e8df89a1666df96cb0f738bb807d/openraft/src/testing/log/suite.rs#L95>
 impl From<u64> for Uuid {
     fn from(value: u64) -> Self {
         let mut buf = [0u8; UUID_LEN];
