@@ -1,0 +1,14 @@
+/target
+.idea
+.DS_Store
+*.qf
+*.fst
+*.log
+.vscode
+_dist
+*.iml
+
+# Env files
+.direnv
+.envrc
+.env
